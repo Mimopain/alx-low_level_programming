@@ -10,32 +10,27 @@
  */
 int main(void)
 {
-	int tensDigit1, unitsDigit1;
+	int tens1, units1;
 
-	for (tensDigit1 = 0; tensDigit1 < 10; tensDigit1++)
-
+	for (tens1 = 0; tens1 < 10; tens1++)
 	{
-
-		for (unitsDigit1 = 0; unitsDigit1 < 10; unitsDigit1++)
-
+		for (units1 = 0; units1 < 10; units1++)
 		{
-			int tensDigit2, unitsDigit2;
+			int tens2, units2;
 
-			for (tensDigit2 = tensDigit1; tensDigit2 < 10; tensDigit2++)
-
+			for (tens2 = tens1; tens2 < 10; tens2++)
 			{
-				int startUnitsDigit = (tensDigit1 == tensDigit2) ? unitsDigit1 + 1 : 0;
+				int startUnits = (tens1 == tens2) ? units1 + 1 : 0;
 
-				for (unitsDigit2 = startUnitsDigit; unitsDigit2 < 10; unitsDigit2++)
-
+				for (units2 = startUnits; units2 < 10; units2++)
 				{
-					putchar(tensDigit1 + '0');
-					putchar(unitsDigit1 + '0');
+					putchar(tens1 + '0');
+					putchar(units1 + '0');
 					putchar(' ');
-					putchar(tensDigit2 + '0');
-					putchar(unitsDigit2 + '0');
+					putchar(tens2 + '0');
+					putchar(units2 + '0');
 
-					if (!(tensDigit1 == 9 && unitsDigit1 == 9 && tensDigit2 == 9 && unitsDigit2 == 9))
+					if (!(tens1 == 9 && units1 == 8 && tens2 == 9 && units2 == 9))
 
 					{
 						putchar(',');
@@ -45,10 +40,8 @@ int main(void)
 			}
 		}
 	}
-
 	{
 		putchar('\n');
 	}
-
 	return (0);
 }
