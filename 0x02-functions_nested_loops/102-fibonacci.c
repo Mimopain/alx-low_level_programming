@@ -14,14 +14,14 @@ int main(void)
 {
 	int i;
 
-	long long int fib1 = 1, fib2 = 2, next;
+	long int fib1 = 1, fib2 = 2, next;
 
-	printf("%lld, %lld, ", fib1, fib2);
+	printf("%ld, %ld, ", fib1, fib2);
 
 	for (i = 3; i <= 50; i++)
 	{
 		next = fib1 + fib2;
-		printf("%lld", next);
+		printf("%ld", next);
 
 		if (i < 50)
 		printf(", ");
