@@ -4,11 +4,11 @@
  * _abs - Entry point
  *
  * Description: a program that calculates the absolute value of an integer
- *@int: argument
+ *@n: argument
  * Return: return 0 on success
  */
 
-int _abs(int)
+int _abs(int n)
 {
 	if (n < 0)
 		n = -n;
