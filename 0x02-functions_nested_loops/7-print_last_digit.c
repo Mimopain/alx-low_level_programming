@@ -5,15 +5,15 @@
  *
  * Description: a program that prints the last digit of numbers
  *
- * @n: character assignment
+ * @n: integer declaration
  * Return: Return x on success
  */
 
 int print_last_digit(int n)
 {
-	int x = 0;
+	int x;
 
-	if (x < 0)
+	if (n < 0)
 		n = -n;
 
 	x = n % 10;
