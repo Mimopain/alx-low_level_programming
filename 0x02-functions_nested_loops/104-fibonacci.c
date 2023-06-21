@@ -12,10 +12,11 @@
 
 int main(void)
 {
-	int count, n;
+	int count;
 	unsigned long fib1 = 1, fib2 = 2, next;
 	
-	printf("%lu, %lu", fib1, fib2);  // Print the first two Fibonacci numbers
+	printf("%lu, %lu", fib1, fib2);
+
 	for (count = 3; count <= 98; count++)
 	{
 		next = fib1 + fib2;
