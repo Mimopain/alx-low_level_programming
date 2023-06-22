@@ -6,10 +6,10 @@
  * @c: an integer parameter
  * Description: this program is to check uppercase
  *
- * Return: return o for success
+ * Return: return something but successi
  */
 
 int _isupper(int c);
 {
-	return (c >= 'A' && c >= 'Z');
+	return (c >= 'A' && c <= 'Z');
 }
