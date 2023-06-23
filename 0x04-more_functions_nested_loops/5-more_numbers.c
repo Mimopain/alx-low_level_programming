@@ -15,13 +15,15 @@ void more_numbers(void)
 
 	for (i = 0; i <= 14; i++)
 	{
-		j = i * 10;
+		for (j = 0; j <= 14; j++)
+		{
 
-		if (j >= 10)
-			_putchar('0' + j / 10);
-		_putchar('0' + j % 10);
-		if (i < 14)
-			_putchar(' ');
-	}
+		if (j > 9)
+		{
+			_putchar('0' + (j / 10));
+		}
+		_putchar('0' + (j % 10));
+		}
 			_putchar('\n');
+	}
 }
