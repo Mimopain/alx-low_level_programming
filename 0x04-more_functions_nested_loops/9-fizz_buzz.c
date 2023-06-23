@@ -1,14 +1,14 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * fizz_buzz - Prints numbers from 1 to 100 according to FizzBuzz rules.
+ * main - Prints numbers from 1 to 100 according to FizzBuzz rules.
  *
  * Description: print numbers from 1 to 100 according to FIZZBUZZ
  *
  * Return: Always 0.
  */
 
-int fizz_buzz(void)
+int main(void)
 {
 	int i;
 
