@@ -1,20 +1,24 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - Prints numbers from 1 to 100 according to FizzBuzz rules.
+ * fizz_buzz - Prints numbers from 1 to 100 according to FizzBuzz rules.
  *
  * Description: print numbers from 1 to 100 according to FIZZBUZZ
  *
  * Return: Always 0.
  */
 
-int main(void)
+int fizz_buzz(void)
 {
 	int i;
 
 	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
+		if (i == 100)
+		{
+			printf("Buzz");
+		}
+		else if (i % 3 == 0 && i % 5 == 0)
 		{
 			printf("FizzBuzz ");
 		}
