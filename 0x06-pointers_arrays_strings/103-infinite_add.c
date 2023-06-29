@@ -16,7 +16,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int len1 = strlen(n1);
 	int len2 = strlen(n2);
 	int maxLen = (len1 > len2) ? len1 : len2;
-	int minLen = (len1 < len2) ? len1 : len2;
 	int carry = 0;
 	int sum, i;
 
@@ -25,32 +24,20 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	r[maxLen] = '\0';
 
-	for (i = 0; i < minLen; i++)
+	for (i = 0; i < maxLen; i++)
 	{
-		sum = (n1[len1 - 1 - i] - '0') + (n2[len2 - 1 - i] - '0') + carry;
+		sum = carry;
+
+		if (i < len1)
+			sum += n1[len1 - 1 - i] - '0';
+
+		if (i < len2)
+			sum += n2[len2 - 1 - i] - '0';
+
 		carry = sum / 10;
+
 		r[maxLen - 1 - i] = (sum % 10) + '0';
 	}
-
-	if (len1 > len2)
-	{
-		for (; i < maxLen; i++)
-		{
-			sum = (n1[len1 - 1 - i] - '0') + carry;
-			carry = sum / 10;
-			r[maxLen - 1 - i] = (sum % 10) + '0';
-		}
-	}
-	else
-	{
-		for (; i < maxLen; i++)
-		{
-			sum = (n2[len2 - 1 - i] - '0') + carry;
-			carry = sum / 10;
-			r[maxLen - 1 - i] = (sum % 10) + '0';
-		}
-	}
-
 	if (carry != 0)
 	{
 		if (maxLen + 1 == size_r)
