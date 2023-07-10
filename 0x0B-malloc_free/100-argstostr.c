@@ -13,7 +13,7 @@
 
 char *argstostr(int ac, char **av)
 {
-	int i,j;
+	int i, j;
 	int position;
 	int total_length;
 	char *concatenated;
