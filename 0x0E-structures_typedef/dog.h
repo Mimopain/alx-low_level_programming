@@ -26,6 +26,7 @@ struct dog
  * Description: This function initializes the members of the struct dog.
  */
 void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
 
 
 #endif /* DOG_H */
