@@ -9,12 +9,13 @@
  *
  * Description: This struct represents a dog with its name, age, and owner.
  */
-struct dog
+typedef struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-};
+}
+dog_t;
 
 /**
  * init_dog - Initializes a struct dog
@@ -25,8 +26,8 @@ struct dog
  *
  * Description: This function initializes the members of the struct dog.
  */
-void init_dog(struct dog *d, char *name, float age, char *owner);
-void print_dog(struct dog *d);
+void init_dog(struct dog_t *d, char *name, float age, char *owner);
+void print_dog(struct dog_t *d);
 
 
 #endif /* DOG_H */
