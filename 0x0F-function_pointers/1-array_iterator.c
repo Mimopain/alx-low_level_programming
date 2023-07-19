@@ -6,7 +6,8 @@
  * @size: Size of the array
  * @action: Function pointer to execute on each element
  *
- * Description: This function calls the provided function pointer `action` on each element of the array.
+ * Description: This function calls the provided function pointer `action`
+ * on each element of the array.
  */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
