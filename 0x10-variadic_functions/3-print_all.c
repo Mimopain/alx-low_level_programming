@@ -3,50 +3,49 @@
 #include <stdio.h>
 
 /**
- * print_all - Prints anything based on the given format
- * @format: A list of types of arguments passed to the function
- *
- * Return: Nothing
+ * print_all - prints all based on given format
+ * @format: list of types of arguments passed to the function
  */
 
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	unsigned int i = 0;
+	int i = 0;
 	char *str;
-	char separator = ',';
 
-	va_start(args, format);
+	va_list list;
+
+	va_start(list, format);
 
 	while (format && format[i])
 	{
 		switch (format[i])
 		{
 			case 'c':
-				printf("%c", va_arg(args, int));
+				printf("%c", va_arg(list, int));
 				break;
 			case 'i':
-				printf("%d", va_arg(args, int));
+				printf("%d", va_arg(list, int));
 				break;
 			case 'f':
-				printf("%f", va_arg(args, double));
+				printf("%f", va_arg(list, double));
 				break;
 			case 's':
-				str = va_arg(args, char *);
-				if (str)
-					printf("%s", str);
-				else
-					printf("(nil)");
+				str = va_arg(list, char *);
+				if (!str)
+					str = "(nil)";
+				printf("%s", str);
 				break;
 			default:
-				separator = 0;
+				i++;
+				continue;
 		}
-		if (separator && format[i + 1])
-			printf("%c ", separator);
+
+		if (format[i + 1])
+			printf(", ");
 
 		i++;
-}
-printf("\n");
+	}
 
-va_end(args);
+	printf("\n");
+	va_end(list);
 }
