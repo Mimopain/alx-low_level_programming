@@ -12,29 +12,34 @@
 int main(int argc, char *argv[])
 {
 	int bytes, i;
-	unsigned char *p;
+	char *arr;
 
 	if (argc != 2)
-
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
+
 	bytes = atoi(argv[1]);
 
 	if (bytes < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
 
-	p = (unsigned char *)main;
+	arr = (char *)main;
 
 	for (i = 0; i < bytes; i++)
 
-		printf("%02x ", p[i]);
-
-	printf("\n");
+	{
+		if (i == bytes - 1)
+		{
+			printf("%02hhx\n", arr[i]);
+			break;
+		}
+		printf("%02hhx ", arr[i]);
+	}
 
 	return (0);
 }
